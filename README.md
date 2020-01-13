@@ -48,7 +48,7 @@ implicit val emailValidator: Validator[Email] = Validator[Email]
   .rule(_.address.contains("@"), "must contain @")
   .rule(_.address.split('@').last.contains("."), "must contain . after @")
 
-implicit val potalCodeValidator: Validator[PostalCode] = Validator[PostalCode]
+implicit val postalCodeValidator: Validator[PostalCode] = Validator[PostalCode]
   .ruleVC((_: String).length == 5, "must be of length 5")
   .ruleVC((_: String).forall(_.isDigit), "must contain only digits")
 
